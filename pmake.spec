@@ -128,7 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pmake
 %attr(755,root,root) %{_bindir}/vmake
 %{_mandir}/man1/pmake.1*
-%{_libdir}/pmake
+%{_datadir}/pmake
 
 %files customs
 %defattr(644,root,root,755)
