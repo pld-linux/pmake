@@ -68,10 +68,10 @@ for I in makefile config.mk common.mk doc/Makefile
 do                                                                              
   perl -pi -e '
     s,= /usr/local/bin,= %{_bindir},;
-    s,= /usr/local/lib/pmake,= %{_datadir}/mk,;
+    s,= /usr/local/lib/pmake,= %{_datadir}/pmake,;
     s,= /usr/bin,= %{_bindir},;
     s,= /usr/sbin,= %{_sbindir},;
-    s,= /usr/lib/pmake,= %{_datadir}/mk,;
+    s,= /usr/lib/pmake,= %{_datadir}/pmake,;
     s,= /usr/lib,= %{_libdir},;
     s,= /usr/include,= %{_includedir},;
     s,/usr/man,%{_mandir},;
