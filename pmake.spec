@@ -132,7 +132,7 @@ for I in makefile config.mk common.mk doc/Makefile ; do
     s,/usr/man,%{_mandir},;
     s,/usr/lib/tmac,= %{_datadir}/tmac,
     ' $I
-done                                                                            
+done
 
 %build
 #
