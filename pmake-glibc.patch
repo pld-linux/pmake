@@ -1,0 +1,103 @@
+--- pmake/doc/Makefile.glibc	Sun Aug 18 21:04:35 1996
++++ pmake/doc/Makefile	Thu Oct 22 09:40:52 1998
+@@ -19,7 +19,7 @@
+ # most of the stuff here is machine independent
+ .EXPORT:
+ 
+-MANDIR		= /usr/local/man
++MANDIR		= /usr/man
+ MANEXT1		= 1
+ MANEXT8		= 8
+ 
+--- pmake/customs/sigList.c.glibc	Sat Apr  4 10:37:26 1998
++++ pmake/customs/sigList.c	Thu Oct 22 09:40:52 1998
+@@ -59,7 +59,7 @@
+     { SIGSTOP,	"STOP" },	/* sendable stop signal not from tty */
+     { SIGTSTP,	"TSTP" },	/* stop signal from tty */
+     { SIGCONT,	"CONT" },	/* continue a stopped process */
+-#ifdef SYSV
++#if defined(SYSV) && !defined(linux)
+     { SIGCLD,	"CLD" },	/* to parent on child stop or exit */
+ #else
+     { SIGCHLD,	"CHLD" },	/* to parent on child stop or exit */
+--- pmake/customs/Makefile.glibc	Sat Apr  4 10:37:11 1998
++++ pmake/customs/Makefile	Thu Oct 22 09:40:52 1998
+@@ -26,9 +26,9 @@
+ # USRLIBDIR is where the customs library (archive) goes.
+ # INCLUDEDIR is where the header files belonging to the customs library go.
+ #
+-ETCDIR		= /usr/local/etc
+-USRLIBDIR	= /usr/local/lib
+-INCLUDEDIR	= /usr/local/include/customs
++ETCDIR		= /usr/sbin
++USRLIBDIR	= /usr/lib
++INCLUDEDIR	= /usr/include/customs
+ 
+ #
+ # Strip installed binaries
+@@ -44,14 +44,14 @@
+ # Install flags for exporting clients.  If USE_RESERVED_PORTS was enabled in
+ # config.h, these need to be suid root.
+ #
+-XBINMODE	= -m 4755 -o root $(STRIP)
++XBINMODE	= -m 4755 -o $(OWNER) $(STRIP)
+ #
+ # Install flags the deamon and for control programs in $(ETCDIR).
+ # The latter can be usefully run by normal users, but critical operations
+ # will only be allowed if run as root.  Therefore they should probably NOT
+ # be suid root.
+ #
+-ETCMODE		= -m 755 -o root $(STRIP)
++ETCMODE		= -m 755 $(STRIP)
+ #
+ # Install flags for the customs library and header files
+ #
+--- pmake/config.mk.glibc	Sat Apr  4 13:30:31 1998
++++ pmake/config.mk	Thu Oct 22 10:50:59 1998
+@@ -48,6 +48,8 @@
+ PUREFLAG	= #-Xlinker -n -Xlinker -Bdynamic
+ TARG_NAME	= sun3
+ # endif
++#elifdef linux
++YYTARG_NAME	= linux
+ #elifdef mips
+ # ifdef sgi
+ CC		:= $(CC) -xansi -D__STDC__
+@@ -86,8 +88,6 @@
+ CC		:= $(CC)
+ OPTIMIZE	= -O # -g 
+ TARG_NAME	= hppa
+-#elifdef linux
+-TARG_NAME	= i686-linux
+ #endif
+ 
+ ##########################
+@@ -99,15 +99,15 @@
+ # These override defaults in common.mk and should match the values
+ # chosen in makefile for the first pmake build.
+ #
+-#DESTDIR		=
+-#BINDIR		= /usr/local/bin
+-#LIBDIR		= /usr/local/lib/pmake
++DESTDIR		= ${RPM_BUILD_ROOT}
++BINDIR		= /usr/bin
++LIBDIR		= /usr/lib/pmake
+ #
+ # These override default install locations in customs/Makefile.
+ #
+-#ETCDIR		= /usr/local/etc
+-#USRLIBDIR	= /usr/local/lib
+-#INCLUDEDIR	= /usr/local/include/customs
++ETCDIR		= /usr/sbin
++USRLIBDIR	= /usr/lib
++INCLUDEDIR	= /usr/include/customs
+ 
+ #
+ # Ultrix man doesn't understand MANPATH, so everything has to go into /usr/man
+@@ -128,5 +128,5 @@
+ # Strip binaries?
+ # (I have heard that Solaris /usr/ucb/install will
+ # produce corrupted binaries when given the -s option.)
+-#STRIP		= #-s
++STRIP		= -s
+ 
