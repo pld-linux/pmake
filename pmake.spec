@@ -5,7 +5,7 @@ Summary(pl):	make w wersji z BSD 4.4
 Summary(tr):	Paralel Make programý
 Name:		pmake
 Version:	2.1.34
-Release:	6
+Release:	7
 License:	BSD
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
@@ -50,13 +50,22 @@ pmake est une version particulière de make qui gère une syntaxe
 additionnelle qui n'est pas dans le make standard. Certains programmes
 Berkeley ont des makefiles écrits pour pmake.
 
+%description -l pl
+make jest narzêdziem GNU pozwalaj±cym na budowanie i instalowanie
+programów bez wiêkszej wiedzy na temat procesu budowania. Szczegó³y
+dotycz±ce tego jak program powinien byæ budowany s± do³±czane do
+Makefile programu. pmake jest konkretn± wersj± (BSD 4.4) make. pmake
+obs³uguje trochê rozszerzeñ sk³adni, których nie ma standardowy make.
+Niektóre programy z BSD maj± Makefile pisane dla pmake.
+
 %description -l tr
 Pmake, standart make programý içinde yer almayan ek bir takým
 sözdizimlerini destekleyen bir make program sürümüdür. Bazý Berkeley
 programlarý, pmake için yazýlmýþ Makefile dosyalarýna sahiptir.
 
 %package customs
-Summary:	A remote execution facility for pmake.
+Summary:	A remote execution facility for pmake
+Summary(pl):	U³atwienie zdalnego wywo³ywania pmake
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
 Group(fr):	Development/Outils
@@ -81,6 +90,27 @@ Clients are provided to:
  - abort, restart or ping any customs agent on the network (cctrl).
  - export a command from the shell (export).
  - accept log information from all hosts on the net (logd).
+
+%description customs -l pl
+customs to dodatek do pmake u³atwiaj±cy zdalne uruchamianie. customs
+jest zaprojektowany do pracy na maszynach w sieci ze spójnym,
+dzielonym systemem plików. Wymaga Sun RPC aby u¿ywaæ procedur XDR
+(eXternal Data Representation) do logowania funkcji.
+
+Pojedynczy serwer jest wyznaczany jako g³ówny i jest dodatkowo
+odpowiedzialny za sprawdzenie kiedy inna maszyna przestaje dzia³aæ (z
+której to maszyny dowolna inna maszyna musi przej±æ prace), oraz za
+przydzia³ dostêpnych maszyn ¿±daj±cych ich klientom. Praca g³ównego
+serwera nie jest oddawania jednej maszynie, ale raczej jest
+przydzielana wybranej spo¶ród aktywnych kiedy poprzednia przestaje
+dzia³aæ.
+
+Klienci maj± z zadanie:
+- podawaæ kryteria swojej dostêpno¶ci (importquota)
+- sprawdzaæ stan wszystkich zarejestrowanych maszyn w sieci (reginfo)
+- zakoñczyæ, zrestartowaæ, pingowaæ dowolnego agenta customs (cctrl)
+- wydaæ polecenie z pow³oki (export)
+- przyj±æ logi od innych maszyn w sieci (logd).
 
 %prep
 %setup -q -n pmake
