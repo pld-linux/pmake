@@ -116,8 +116,8 @@ Klienci maj± z zadanie:
 %setup -q -n pmake
 %patch0 -p1
 
-for I in alpha i386 sparc; do
-	cp -f $RPM_SOURCE_DIR/pmake-sys-$I.mk ./lib/mk/sys-$I.mk
+for I in %{SOURCE1} %{SOURCE2} %{SOURCE3} ; do
+	cp -f $I ./lib/mk/`echo $I | sed 's@.*sys-@sys-@'`
 done
 for I in i486 i586 i786; do
 	ln -sf sys-i386.mk lib/mk/sys-$I.mk
@@ -126,8 +126,7 @@ for I in sparc64 sparcv9; do
 	ln -sf sys-sparc.mk lib/mk/sys-$I.mk
 done
 
-for I in makefile config.mk common.mk doc/Makefile                              
-do                                                                              
+for I in makefile config.mk common.mk doc/Makefile ; do
   perl -pi -e '
     s,= /usr/local/bin,= %{_bindir},;
     s,= /usr/local/lib/pmake,= %{_datadir}/pmake,;
