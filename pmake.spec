@@ -100,7 +100,7 @@ make	CC="gcc $RPM_OPT_FLAGS" SYSFLAGS="-DSYSV -DSVR4" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir}%{_includedir},%{_libdir},%{_mandir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_includedir},%{_libdir},%{_mandir}}
 
 `pwd`/bin/pmake CC="gcc $RPM_OPT_FLAGS" SYSFLAGS="-DSYSV -DSVR4" \
     DESTDIR=${RPM_BUILD_ROOT} \
@@ -118,7 +118,6 @@ mv -f customs/README customs/README.customs
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man*/* \
 	customs/README.customs CHANGES README \
 	doc/tutorial.* doc/prefix.*
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
