@@ -8,6 +8,7 @@ i386=    Machine should be compatable with a i386
 i486=    Machine should be compatable with a i386
 i586=    Machine should be compatable with a i386
 i686=    Machine should be compatable with a i386
+athlon=    Machine should be compatable with a i386
 
 LIN != /bin/uname -s
 #if $(LIN) == "Linux"
