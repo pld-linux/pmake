@@ -1,4 +1,7 @@
-Summary:	The BSD 4.4 version of make.
+Summary:	The BSD 4.4 version of make
+Summary(de):	Berkeley's Parallel Make
+Summary(fr):	Make parallèle de Berkeley
+Summary(tr):	Paralel Make programý
 Name:		pmake
 Version:	2.1.34
 Release:	6
@@ -23,6 +26,32 @@ program. Some Berkeley programs have Makefiles written for pmake.
 
 Pmake should be installed on your system so that you will be able to
 build programs which require using pmake instead of make.
+
+%description -l de
+Das Programm make dient zum Koordinieren der Kompilierung
+und Verknüpfen einer Reihe von Quellen zu einem Programm,
+wobei nur die notwendigen Teile neu kompiliert werden, was dem.
+Entwickler viel Zeit spart. make kann noch viel mehr- lesen Sie die Doku.
+
+Pmake ist eine besondere Version von make, die zusätzliche Syntax
+unterstützt, die im herkömmlichen Programm nicht enthalten ist.
+Einige Berkeley-Programme enthalten Makefiles für pmake.
+
+%description -l fr
+make sert à coordonner la compilation et l'édition de liens
+d'un ensemble de sources pour donner un programme, en ne recompilant
+que ce qui est nécessaire et en faisant donc gagner beaucoup de
+temps au développeur. En fait, make peut faire beaucoup plus,
+lisez les docs info.
+
+pmake est une version particulière de make qui gère une syntaxe
+additionnelle qui n'est pas dans le make standard. Certains
+programmes Berkeley ont des makefiles écrits pour pmake.
+
+%description -l tr
+Pmake, standart make programý içinde yer almayan ek bir takým sözdizimlerini
+destekleyen bir make program sürümüdür. Bazý Berkeley programlarý, pmake için
+yazýlmýþ Makefile dosyalarýna sahiptir.
 
 %package customs
 Summary:	A remote execution facility for pmake.
@@ -91,11 +120,11 @@ make	CC="gcc $RPM_OPT_FLAGS" SYSFLAGS="-DSYSV -DSVR4" \
 #
 # Then build pmake using pmake & Makefile's
 `pwd`/bin/pmake CC="gcc $RPM_OPT_FLAGS" SYSFLAGS="-DSYSV -DSVR4" \
-    ETCDIR=%{_sbindir} \
-    MANDIR=%{_mandir} \
-    LIBDIR=%{_datadir}/pmake \
-    USRLIBDIR=%{_libdir} \
-    INCLUDEDIR=%{_includedir}/customs \
+	ETCDIR=%{_sbindir} \
+	MANDIR=%{_mandir} \
+	LIBDIR=%{_datadir}/pmake \
+	USRLIBDIR=%{_libdir} \
+	INCLUDEDIR=%{_includedir}/customs \
         all
 
 %install
@@ -103,12 +132,12 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_includedir},%{_libdir},%{_mandir}}
 
 `pwd`/bin/pmake CC="gcc $RPM_OPT_FLAGS" SYSFLAGS="-DSYSV -DSVR4" \
-    DESTDIR=${RPM_BUILD_ROOT} \
-    ETCDIR=${RPM_BUILD_ROOT}%{_sbindir} \
-    MANDIR=${RPM_BUILD_ROOT}%{_mandir} \
-    LIBDIR=${RPM_BUILD_ROOT}%{_datadir}/pmake \
-    USRLIBDIR=${RPM_BUILD_ROOT}%{_libdir} \
-    INCLUDEDIR=${RPM_BUILD_ROOT}%{_includedir}/customs \
+	DESTDIR=${RPM_BUILD_ROOT} \
+	ETCDIR=${RPM_BUILD_ROOT}%{_sbindir} \
+	MANDIR=${RPM_BUILD_ROOT}%{_mandir} \
+	LIBDIR=${RPM_BUILD_ROOT}%{_datadir}/pmake \
+	USRLIBDIR=${RPM_BUILD_ROOT}%{_libdir} \
+	INCLUDEDIR=${RPM_BUILD_ROOT}%{_includedir}/customs \
         install
 
 # XXX rename export.1 to customs_export.1 to avoid conflict with bash export.1.
