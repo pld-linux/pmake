@@ -8,9 +8,6 @@ Version:	2.1.34
 Release:	7
 License:	BSD
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/Narzêdzia
 Source0:	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/%{name}-%{version}.tar.Z
 Source1:	%{name}-sys-alpha.mk
 Source2:	%{name}-sys-i386.mk
@@ -67,9 +64,6 @@ programlarý, pmake için yazýlmýþ Makefile dosyalarýna sahiptir.
 Summary:	A remote execution facility for pmake
 Summary(pl):	U³atwienie zdalnego wywo³ywania pmake
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/Narzêdzia
 
 %description customs
 Customs is a remote execution facility for PMake. Customs is designed
