@@ -9,6 +9,7 @@ Release:	8
 License:	BSD
 Group:		Development/Tools
 Source0:	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/%{name}-%{version}.tar.Z
+# Source0-md5:	3b9b65878095358e5858d445dc0311ce
 Source1:	%{name}-sys-alpha.mk
 Source2:	%{name}-sys-i386.mk
 Source3:	%{name}-sys-sparc.mk
