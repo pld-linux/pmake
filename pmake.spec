@@ -170,15 +170,12 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_includedir},%{_libdir},%{_m
 mv -f $RPM_BUILD_ROOT%{_mandir}/man1/{export,customs_export}.1
 mv -f customs/README customs/README.customs
 
-gzip -9nf customs/README.customs CHANGES README \
-	doc/tutorial.* doc/prefix.*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz customs/*.gz doc/* etc tests
+%doc customs/README.customs CHANGES README doc/* etc tests
 %attr(755,root,root) %{_bindir}/pmake
 %attr(755,root,root) %{_bindir}/vmake
 %{_mandir}/man1/pmake.1*
