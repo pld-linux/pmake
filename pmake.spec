@@ -10,7 +10,7 @@ Source2: pmake-sys-i386.mk
 Source3: pmake-sys-sparc.mk
 Patch0: pmake-2.1.33-glibc.patch
 Patch1: pmake-2.1.33-compat21.patch
-BuildRoot: /var/tmp/%{name}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Make is a GNU tool which allows users to build and install programs
