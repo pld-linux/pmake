@@ -1,0 +1,24 @@
+--- pmake/customs/logd.c~	Sun Dec 31 05:31:26 1995
++++ pmake/customs/logd.c	Mon Apr  7 01:01:25 2003
+@@ -32,6 +32,7 @@
+ #else
+ #include    <varargs.h>
+ #endif
++#include    <time.h>
+ 
+ #include    "customs.h"
+ #include    "log.h"
+--- pmake/lib/sprite/enomem.c~	Wed Jan  6 10:53:30 1993
++++ pmake/lib/sprite/enomem.c	Mon Apr  7 01:09:10 2003
+@@ -8,10 +8,9 @@
+ #endif /* not lint */
+ 
+ #include <stdio.h>
++#include <errno.h>
+ #include "sprite.h"
+ 
+-extern int errno;
+-
+ /*
+  * enomem --
+  *      die when out of memory.

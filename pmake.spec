@@ -5,7 +5,7 @@ Summary(pl):	make w wersji z BSD 4.4
 Summary(tr):	Paralel Make programý
 Name:		pmake
 Version:	2.1.34
-Release:	7
+Release:	8
 License:	BSD
 Group:		Development/Tools
 Source0:	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/%{name}-%{version}.tar.Z
@@ -13,6 +13,7 @@ Source1:	%{name}-sys-alpha.mk
 Source2:	%{name}-sys-i386.mk
 Source3:	%{name}-sys-sparc.mk
 Patch0:		%{name}-glibc.patch
+Patch1:		%{name}-include.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -109,6 +110,7 @@ Klienci maj± z zadanie:
 %prep
 %setup -q -n pmake
 %patch0 -p1
+%patch1 -p1
 
 for I in %{SOURCE1} %{SOURCE2} %{SOURCE3} ; do
 	cp -f $I ./lib/mk/`echo $I | sed 's@.*sys-@sys-@'`
