@@ -126,17 +126,17 @@ for I in sparc64 sparcv9; do
 done
 
 for I in makefile config.mk common.mk doc/Makefile ; do
-  perl -pi -e '
-    s,= /usr/local/bin,= %{_bindir},;
-    s,= /usr/local/lib/pmake,= %{_datadir}/pmake,;
-    s,= /usr/bin,= %{_bindir},;
-    s,= /usr/sbin,= %{_sbindir},;
-    s,= /usr/lib/pmake,= %{_datadir}/pmake,;
-    s,= /usr/lib,= %{_libdir},;
-    s,= /usr/include,= %{_includedir},;
-    s,/usr/man,%{_mandir},;
-    s,/usr/lib/tmac,= %{_datadir}/tmac,
-    ' $I
+	perl -pi -e '
+		s,= /usr/local/bin,= %{_bindir},;
+		s,= /usr/local/lib/pmake,= %{_datadir}/pmake,;
+		s,= /usr/bin,= %{_bindir},;
+		s,= /usr/sbin,= %{_sbindir},;
+		s,= /usr/lib/pmake,= %{_datadir}/pmake,;
+		s,= /usr/lib,= %{_libdir},;
+		s,= /usr/include,= %{_includedir},;
+		s,/usr/man,%{_mandir},;
+		s,/usr/lib/tmac,= %{_datadir}/tmac,
+		' $I
 done
 
 %build
@@ -156,7 +156,7 @@ mkdir bin
 	LIBDIR=%{_datadir}/pmake \
 	USRLIBDIR=%{_libdir} \
 	INCLUDEDIR=%{_includedir}/customs \
-        all
+	all
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -169,7 +169,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_includedir},%{_libdir},%{_m
 	LIBDIR=${RPM_BUILD_ROOT}%{_datadir}/pmake \
 	USRLIBDIR=${RPM_BUILD_ROOT}%{_libdir} \
 	INCLUDEDIR=${RPM_BUILD_ROOT}%{_includedir}/customs \
-        install
+	install
 
 # XXX rename export.1 to customs_export.1 to avoid conflict with bash export.1.
 mv -f $RPM_BUILD_ROOT%{_mandir}/man1/{export,customs_export}.1
