@@ -5,7 +5,7 @@ Summary(pl):	make w wersji z BSD 4.4
 Summary(tr):	Paralel Make programý
 Name:		pmake
 Version:	2.1.36
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Tools
 Source0:	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/%{name}-%{version}.tar.Z
