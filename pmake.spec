@@ -4,12 +4,12 @@ Summary(fr):	Make parallèle de Berkeley
 Summary(pl):	make w wersji z BSD 4.4
 Summary(tr):	Paralel Make programý
 Name:		pmake
-Version:	2.1.34
-Release:	8
+Version:	2.1.36
+Release:	1
 License:	BSD
 Group:		Development/Tools
 Source0:	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/%{name}-%{version}.tar.Z
-# Source0-md5:	3b9b65878095358e5858d445dc0311ce
+# Source0-md5:	7831782071d2389849f81ed22b429edd
 Source1:	%{name}-sys-alpha.mk
 Source2:	%{name}-sys-i386.mk
 Source3:	%{name}-sys-sparc.mk
