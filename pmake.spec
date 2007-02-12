@@ -1,8 +1,8 @@
 Summary:	The BSD 4.4 version of make
-Summary(de):	Berkeley's Parallel Make
-Summary(fr):	Make parallèle de Berkeley
-Summary(pl):	make w wersji z BSD 4.4
-Summary(tr):	Paralel Make programı
+Summary(de.UTF-8):   Berkeley's Parallel Make
+Summary(fr.UTF-8):   Make parallÃ¨le de Berkeley
+Summary(pl.UTF-8):   make w wersji z BSD 4.4
+Summary(tr.UTF-8):   Paralel Make programÄ±
 Name:		pmake
 Version:	2.1.36
 Release:	3
@@ -30,43 +30,43 @@ program. Some Berkeley programs have Makefiles written for pmake.
 Pmake should be installed on your system so that you will be able to
 build programs which require using pmake instead of make.
 
-%description -l de
+%description -l de.UTF-8
 Das Programm make dient zum Koordinieren der Kompilierung und
-Verknüpfen einer Reihe von Quellen zu einem Programm, wobei nur die
+VerknÃ¼pfen einer Reihe von Quellen zu einem Programm, wobei nur die
 notwendigen Teile neu kompiliert werden, was dem. Entwickler viel Zeit
 spart. make kann noch viel mehr- lesen Sie die Doku.
 
-Pmake ist eine besondere Version von make, die zusätzliche Syntax
-unterstützt, die im herkömmlichen Programm nicht enthalten ist. Einige
-Berkeley-Programme enthalten Makefiles für pmake.
+Pmake ist eine besondere Version von make, die zusÃ¤tzliche Syntax
+unterstÃ¼tzt, die im herkÃ¶mmlichen Programm nicht enthalten ist. Einige
+Berkeley-Programme enthalten Makefiles fÃ¼r pmake.
 
-%description -l fr
-make sert à coordonner la compilation et l'édition de liens d'un
+%description -l fr.UTF-8
+make sert Ã  coordonner la compilation et l'Ã©dition de liens d'un
 ensemble de sources pour donner un programme, en ne recompilant que ce
-qui est nécessaire et en faisant donc gagner beaucoup de temps au
-développeur. En fait, make peut faire beaucoup plus, lisez les docs
+qui est nÃ©cessaire et en faisant donc gagner beaucoup de temps au
+dÃ©veloppeur. En fait, make peut faire beaucoup plus, lisez les docs
 info.
 
-pmake est une version particulière de make qui gère une syntaxe
+pmake est une version particuliÃ¨re de make qui gÃ¨re une syntaxe
 additionnelle qui n'est pas dans le make standard. Certains programmes
-Berkeley ont des makefiles écrits pour pmake.
+Berkeley ont des makefiles Ã©crits pour pmake.
 
-%description -l pl
-make jest narzêdziem GNU pozwalaj±cym na budowanie i instalowanie
-programów bez wiêkszej wiedzy na temat procesu budowania. Szczegó³y
-dotycz±ce tego jak program powinien byæ budowany s± do³±czane do
-Makefile programu. pmake jest konkretn± wersj± (BSD 4.4) make. pmake
-obs³uguje trochê rozszerzeñ sk³adni, których nie ma standardowy make.
-Niektóre programy z BSD maj± Makefile pisane dla pmake.
+%description -l pl.UTF-8
+make jest narzÄ™dziem GNU pozwalajÄ…cym na budowanie i instalowanie
+programÃ³w bez wiÄ™kszej wiedzy na temat procesu budowania. SzczegÃ³Å‚y
+dotyczÄ…ce tego jak program powinien byÄ‡ budowany sÄ… doÅ‚Ä…czane do
+Makefile programu. pmake jest konkretnÄ… wersjÄ… (BSD 4.4) make. pmake
+obsÅ‚uguje trochÄ™ rozszerzeÅ„ skÅ‚adni, ktÃ³rych nie ma standardowy make.
+NiektÃ³re programy z BSD majÄ… Makefile pisane dla pmake.
 
-%description -l tr
-Pmake, standart make programı içinde yer almayan ek bir takım
-sözdizimlerini destekleyen bir make program sürümüdür. Bazı Berkeley
-programları, pmake için yazılmış Makefile dosyalarına sahiptir.
+%description -l tr.UTF-8
+Pmake, standart make programÄ± iÃ§inde yer almayan ek bir takÄ±m
+sÃ¶zdizimlerini destekleyen bir make program sÃ¼rÃ¼mÃ¼dÃ¼r. BazÄ± Berkeley
+programlarÄ±, pmake iÃ§in yazÄ±lmÄ±ÅŸ Makefile dosyalarÄ±na sahiptir.
 
 %package customs
 Summary:	A remote execution facility for pmake
-Summary(pl):	U³atwienie zdalnego wywo³ywania pmake
+Summary(pl.UTF-8):   UÅ‚atwienie zdalnego wywoÅ‚ywania pmake
 Group:		Development/Tools
 
 %description customs
@@ -89,26 +89,26 @@ Clients are provided to:
  - export a command from the shell (export).
  - accept log information from all hosts on the net (logd).
 
-%description customs -l pl
-customs to dodatek do pmake u³atwiaj±cy zdalne uruchamianie. customs
-jest zaprojektowany do pracy na maszynach w sieci ze spójnym,
-dzielonym systemem plików. Wymaga Sun RPC aby u¿ywaæ procedur XDR
+%description customs -l pl.UTF-8
+customs to dodatek do pmake uÅ‚atwiajÄ…cy zdalne uruchamianie. customs
+jest zaprojektowany do pracy na maszynach w sieci ze spÃ³jnym,
+dzielonym systemem plikÃ³w. Wymaga Sun RPC aby uÅ¼ywaÄ‡ procedur XDR
 (eXternal Data Representation) do logowania funkcji.
 
-Pojedynczy serwer jest wyznaczany jako g³ówny i jest dodatkowo
-odpowiedzialny za sprawdzenie kiedy inna maszyna przestaje dzia³aæ (z
-której to maszyny dowolna inna maszyna musi przej±æ prace), oraz za
-przydzia³ dostêpnych maszyn ¿±daj±cych ich klientom. Praca g³ównego
+Pojedynczy serwer jest wyznaczany jako gÅ‚Ã³wny i jest dodatkowo
+odpowiedzialny za sprawdzenie kiedy inna maszyna przestaje dziaÅ‚aÄ‡ (z
+ktÃ³rej to maszyny dowolna inna maszyna musi przejÄ…Ä‡ prace), oraz za
+przydziaÅ‚ dostÄ™pnych maszyn Å¼Ä…dajÄ…cych ich klientom. Praca gÅ‚Ã³wnego
 serwera nie jest oddawania jednej maszynie, ale raczej jest
-przydzielana wybranej spo¶ród aktywnych kiedy poprzednia przestaje
-dzia³aæ.
+przydzielana wybranej spoÅ›rÃ³d aktywnych kiedy poprzednia przestaje
+dziaÅ‚aÄ‡.
 
-Klienci maj± z zadanie:
-- podawaæ kryteria swojej dostêpno¶ci (importquota)
-- sprawdzaæ stan wszystkich zarejestrowanych maszyn w sieci (reginfo)
-- zakoñczyæ, zrestartowaæ, pingowaæ dowolnego agenta customs (cctrl)
-- wydaæ polecenie z pow³oki (export)
-- przyj±æ logi od innych maszyn w sieci (logd).
+Klienci majÄ… z zadanie:
+- podawaÄ‡ kryteria swojej dostÄ™pnoÅ›ci (importquota)
+- sprawdzaÄ‡ stan wszystkich zarejestrowanych maszyn w sieci (reginfo)
+- zakoÅ„czyÄ‡, zrestartowaÄ‡, pingowaÄ‡ dowolnego agenta customs (cctrl)
+- wydaÄ‡ polecenie z powÅ‚oki (export)
+- przyjÄ…Ä‡ logi od innych maszyn w sieci (logd).
 
 %prep
 %setup -q -n pmake
