@@ -1,8 +1,8 @@
 Summary:	The BSD 4.4 version of make
-Summary(de.UTF-8):   Berkeley's Parallel Make
-Summary(fr.UTF-8):   Make parallèle de Berkeley
-Summary(pl.UTF-8):   make w wersji z BSD 4.4
-Summary(tr.UTF-8):   Paralel Make programı
+Summary(de.UTF-8):	Berkeley's Parallel Make
+Summary(fr.UTF-8):	Make parallèle de Berkeley
+Summary(pl.UTF-8):	make w wersji z BSD 4.4
+Summary(tr.UTF-8):	Paralel Make programı
 Name:		pmake
 Version:	2.1.36
 Release:	3
@@ -66,7 +66,7 @@ programları, pmake için yazılmış Makefile dosyalarına sahiptir.
 
 %package customs
 Summary:	A remote execution facility for pmake
-Summary(pl.UTF-8):   Ułatwienie zdalnego wywoływania pmake
+Summary(pl.UTF-8):	Ułatwienie zdalnego wywoływania pmake
 Group:		Development/Tools
 
 %description customs
