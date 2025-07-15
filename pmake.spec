@@ -112,8 +112,8 @@ Klienci mają z zadanie:
 
 %prep
 %setup -q -n pmake
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 for I in %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5}; do
 	cp -f $I ./lib/mk/`echo $I | sed 's@.*sys-@sys-@'`
